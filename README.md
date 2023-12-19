@@ -51,3 +51,9 @@ Executing the template directly works as expected
 % ./bin/chezmoi execute-template < .local/share/chezmoi/.chezmoi.toml.tmpl
 # This is a test
 ```
+
+## Solution
+
+This is intended behavior as the `.chezmoi.toml.tmpl` is executed before the source state is read, so templates in `.chezmoitemplates` are not yet available.
+
+Documented by [#3419](https://github.com/twpayne/chezmoi/pull/3419).
